@@ -35,6 +35,10 @@ const yScale = d3
   .scaleLinear()
   .domain(d3.extent(data, yAccessor))
   .range([dimensions.boundedHeight, 0]);
+const xScale = d3
+  .scaleTime()
+  .domain(d3.extent(data, xAccessor))
+  .range([0, dimensions.boundedWidth]);
 const freezing = yScale(32);
 const freezingTemperatures = bounds
   .append("rect")

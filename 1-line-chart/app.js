@@ -47,3 +47,7 @@ const freezingTemperatures = bounds
   .attr("y", freezing)
   .attr("height", dimensions.boundedHeight - freezing)
   .attr("fill", "#e0f3f3");
+const line = d3
+  .line()
+  .x((d) => xScale(xAccessor(d)))
+  .y((d) => yScale(yAccessor(d)));

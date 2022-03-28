@@ -35,3 +35,11 @@ const yScale = d3
   .scaleLinear()
   .domain(d3.extent(data, yAccessor))
   .range([dimensions.boundedHeight, 0]);
+const freezing = yScale(32);
+const freezingTemperatures = bounds
+  .append("rect")
+  .attr("x", 0)
+  .attr("width", dimensions.boundedWidth)
+  .attr("y", freezing)
+  .attr("height", dimensions.boundedHeight - freezing)
+  .attr("fill", "#e0f3f3");

@@ -51,3 +51,4 @@ const line = d3
   .line()
   .x((d) => xScale(xAccessor(d)))
   .y((d) => yScale(yAccessor(d)));
+const graphLine = bounds.append("path").attr("d", line(data));

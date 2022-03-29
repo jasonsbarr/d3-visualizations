@@ -57,3 +57,8 @@ const graphLine = bounds
   .attr("fill", "none")
   .attr("stroke", "#af9358")
   .attr("stroke-width", 2);
+const yAxis = bounds.append("g").call(d3.axisLeft().scale(yScale));
+const xAxis = bounds
+  .append("g")
+  .call(d3.axisBottom().scale(xScale))
+  .style("transform", `translateY(${dimensions.boundedHeight}px)`);

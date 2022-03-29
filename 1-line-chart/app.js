@@ -51,14 +51,14 @@ const line = d3
   .line()
   .x((d) => xScale(xAccessor(d)))
   .y((d) => yScale(yAccessor(d)));
-const graphLine = bounds
+bounds
   .append("path")
   .attr("d", line(data))
   .attr("fill", "none")
   .attr("stroke", "#af9358")
   .attr("stroke-width", 2);
-const yAxis = bounds.append("g").call(d3.axisLeft().scale(yScale));
-const xAxis = bounds
+bounds.append("g").call(d3.axisLeft().scale(yScale));
+bounds
   .append("g")
   .call(d3.axisBottom().scale(xScale))
   .style("transform", `translateY(${dimensions.boundedHeight}px)`);
